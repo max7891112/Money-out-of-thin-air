@@ -1,0 +1,42 @@
+.header {
+    width: 100%;
+    padding: 36px 50px;
+    background-color: #212121;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__container {
+        display: flex;
+        gap: 70px;
+        max-width: 1400px;
+    }
+    &__title {
+        font-size: 28px;
+    }
+    &__base {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__button-night-mode {
+    }
+    &__button-enter {
+        width: 100px;
+        height: 40px;
+        padding: 10px 30px;
+        color: white;
+        background-color: #11B14C;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    
+}

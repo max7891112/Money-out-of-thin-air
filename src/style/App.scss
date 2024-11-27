@@ -5,3 +5,26 @@
     font-size: 20px;
     background-color: rgb(255, 255, 255);
 }
+.content{
+    // max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    font-face {
+        font-weight: 400;
+        font-family: 'Involve';
+        src: url('../fonts/Involve-Regular.otf');
+    }
+    font-face {
+        font-weight: 500;
+        font-family: 'Involve';
+        src: url('../fonts/Involve-Medium.otf');
+    }
+    font-face {
+        font-weight: 600;
+        font-family: 'Involve';
+        src: url('../fonts/Involve-SemiBold.otf');
+    }
+    font-family: Involve, sans-serif;
+    font-weight: 400;
+
+}
