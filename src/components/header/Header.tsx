@@ -1,13 +1,14 @@
+import style from "./header.module.scss";
 export const Header = () => {
   return (
     <>
-      <header className="header ">
-        <div className="header__container">
-          <h1 className="header__title">
+      <header className={style.header}>
+        <div className={style.container}>
+          <h1 className={style.title}>
             <span className="_green">money</span>out
           </h1>
 
-          <div className="header__base">
+          <div className={style.base}>
             <div>Вклады</div>
             <div>Кредитные карты</div>
             <div>Дебетовые карты</div>
@@ -17,10 +18,10 @@ export const Header = () => {
             <div>Банки</div>
           </div>
 
-          <div className="header__buttons">
-            <div className="header__button-night-mode">night mode</div>
+          <div className={style.buttons}>
+            <div className={style.buttonnNightMode}>night mode</div>
 
-            <button className="header__button-enter">Вход</button>
+            <button className={style.buttonEnter}>Вход</button>
           </div>
         </div>
       </header>
