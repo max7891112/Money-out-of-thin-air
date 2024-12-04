@@ -1,0 +1,44 @@
+.slogan{
+    display: flex;
+    justify-content: center;
+}
+
+.sloganBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftPart{
+    max-width: 587px;
+    width: 100%;
+    height: 100%;
+}
+
+.textSlogan{
+font-size: 70px;
+line-height: 77.49px;
+text-align: left;
+padding: 303px 40px 39px 40px;
+
+}
+
+.img {
+    max-width: 453px;
+    min-height: 728px;
+}
+
+.rightPart{
+    width: 100%;
+    display: flex;
+}
+
+.lightGreenLine{
+    background-color: #83D8A3;
+    padding-right: 113px;
+}
+
+.middleGreenLine{
+    background-color: #47C477;
+    width: 100%;
+}
