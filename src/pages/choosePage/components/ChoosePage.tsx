@@ -1,4 +1,5 @@
 import { Header } from "../../../components/header/Header";
+import { ShowCaseComponent } from "./showCaseComponent/ShowCaseComponent";
 import { SloganChoosePage } from "./sloganChoosePage/SloganChoosePage";
 
 export const ChoosePage = () => {
@@ -6,6 +7,7 @@ export const ChoosePage = () => {
     <>
       <Header />
       <SloganChoosePage />
+      <ShowCaseComponent />
     </>
   );
 };
