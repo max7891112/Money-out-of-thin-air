@@ -7,7 +7,6 @@ import { SloganBlock } from "./components/sloganBlock/SloganBlock";
 import { ChooseProduct } from "./components/chooseProduct/ChooseProduct";
 import { TestBlock } from "./components/testBlock/testBlock";
 import { ChoosePage } from "./pages/choosePage/components/ChoosePage";
-import { TextField } from "@mui/material";
 
 // import { increment, decrement } from "./providers/store/slices/exampleSlice";
 // import "./style/App.scss";
