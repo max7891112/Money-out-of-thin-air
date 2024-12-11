@@ -23,6 +23,8 @@ export const ShowCaseComponent = () => {
     ],
   });
 
+  const [count, setCount] = useState(1);
+
   return (
     <div className={style.showCaseComponent}>
       <div className="_content-frame">
@@ -38,8 +40,8 @@ export const ShowCaseComponent = () => {
                 );
               })}
             </div>
-            <p className={clsx(style.counterOffer, "_white-color")}>
-              317 предложений
+            <p className={clsx(style.counterOffer, "_white-color")} onClick={() => setCount(count + 1)}>
+              {count}
             </p>
           </div>
           <div className={style.offersBankPart}>
