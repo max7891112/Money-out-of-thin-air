@@ -1,8 +1,8 @@
 import style from "./style/App.module.scss";
-type WrapperProps = {
+type WrapperPropsType = {
   children: JSX.Element[];
 };
 
-export function Wrapper({ children }: WrapperProps) {
+export function Wrapper({ children }: WrapperPropsType) {
   return <div className={style.content}>{children}</div>;
 }

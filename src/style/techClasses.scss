@@ -1,8 +1,24 @@
-._green{
+._green-color{
     color: #11B14C;
 }
 
-._content-frame{
+._green-background{
+    background-color: #11B14C;
+}
+
+._white-color {
+    color: #ffffff;
+}
+
+._black-background {
+    background-color: #000000;
+}
+
+._gray-background {
+    background-color: #212121;
+}
+
+._content-frame {
     max-width: 1400px;
-    padding: 20px;
+    width: 100%;
 }

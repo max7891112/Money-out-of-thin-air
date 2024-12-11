@@ -1,3 +1,4 @@
+import { Button } from "../../UI/Button/Button";
 import style from "./header.module.scss";
 export const Header = () => {
   return (
@@ -6,7 +7,7 @@ export const Header = () => {
         <div className="_content-frame">
           <div className={style.container}>
             <h1 className={style.title}>
-              <span className="_green">money</span>out
+              <span className="_green-color">money</span>out
             </h1>
 
             <div className={style.base}>
@@ -22,7 +23,7 @@ export const Header = () => {
             <div className={style.buttons}>
               <div className={style.buttonnNightMode}>night mode</div>
 
-              <button className={style.buttonEnter}>Вход</button>
+              <Button text="Вход" padding="10px 30px" />
             </div>
           </div>
         </div>

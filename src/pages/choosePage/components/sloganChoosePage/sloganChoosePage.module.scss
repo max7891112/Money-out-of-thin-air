@@ -1,0 +1,65 @@
+.sloganChoosePage {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text {
+   max-width: 756px;
+   font-size: 40px;
+   text-align: center;
+   padding: 50px 0 40px 0;
+}
+.filterPanel{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 20px;
+    padding: 20px 0;
+    border-radius: 15px;
+    justify-content: space-around;
+
+}
+.creditInput{
+    display: block;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px 0 10px 36px;
+    color: #808080;
+    max-width: 476px;
+    flex-basis: 100%;
+}
+.select{
+    display: block;
+    max-width: 476px;
+    flex-basis: 100%;
+    border-radius: 8px;
+    color: #808080;
+    padding: 10px 0 10px 36px;
+    font-size: 16px;
+}
+.option{}
+.btn{
+    border: 1px solid #11B14C;
+    border-radius: 10px;
+    background-color: transparent;
+    transition: .5s;
+    &:hover {
+        color: #11B14C;
+    }
+}
+.tbnContainer{
+    max-width: 94px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px 30px;
+    align-items: center;
+    font-size: 16px;
+}
+.img{}
+.textBtn{}

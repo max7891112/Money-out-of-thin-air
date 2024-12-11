@@ -5,11 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+   
 }
 .container {
     display: flex;
     gap: 70px;
-    max-width: 1400px;
 }
 .title {
     font-size: 28px;
