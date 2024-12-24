@@ -9,6 +9,7 @@ const data = [
   "Кредитные карты для путешествий",
 ];
 import style from "./questions.module.scss";
+import clsx from "clsx";
 export const Slider = () => {
   return (
     <Swiper
@@ -19,7 +20,7 @@ export const Slider = () => {
       // className={style.wrapper}
     >
       <SwiperSlide>
-        <div className={style.slide}>
+        <div className={clsx(style.slide, '_white-color')}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -42,7 +43,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={style.slide}>
+        <div className={clsx(style.slide, '_white-color')}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -65,7 +66,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={style.slide}>
+        <div className={clsx(style.slide, '_white-color')}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -88,7 +89,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={style.slide}>
+        <div className={clsx(style.slide, '_white-color')}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (

@@ -7,9 +7,14 @@
     padding: 50px 0 10px 0;
 }
 
+.containerForTitle {
+    display: flex;
+    justify-content: center;
+}
+
 .title{
     font-size: 50px;
-    max-width: 1120px;
+    max-width: 1000px;
     text-align: center;
     line-height: 55px;
 }
@@ -23,7 +28,7 @@
 .figures{
     display: flex;
     gap: 100px;
-    padding-top: 300px;
+    padding: 300px 0 0 146px;
     width: 100%;
 }
 
@@ -51,6 +56,6 @@
     padding-top: 80px;
     width: 100%;
     p{
-        max-width: 550px;
+        max-width: 425px;
     }
 }

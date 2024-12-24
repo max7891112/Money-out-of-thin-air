@@ -1,5 +1,5 @@
 .header {
-    padding: 36px 50px;
+    padding: 36px;
     background-color: #212121;
     color: white;
     display: flex;
@@ -11,6 +11,7 @@
 .container {
     display: flex;
     gap: 70px;
+    padding: 0 40px;
 }
 .title {
     font-size: 28px;

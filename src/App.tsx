@@ -12,6 +12,7 @@ import { SloganBlock } from "./components/sloganBlock/SloganBlock";
 import { ChooseProduct } from "./components/chooseProduct/ChooseProduct";
 import { TestBlock } from "./components/testBlock/testBlock";
 import { ChoosePage } from "./pages/choosePage/components/ChoosePage";
+import { PopUp } from "./pages/choosePage/components/PopUp/PopUp";
 
 // import { increment, decrement } from "./providers/store/slices/exampleSlice";
 // import "./style/App.scss";
@@ -22,15 +23,15 @@ export const App = () => {
   return (
     <>
       <Wrapper>
-        <Header />
-        <AboutUs />
-        <Strategy />
-        <Questions />
         {/* <Header />
         <SloganBlock />
+        <AboutUs />
         <ChooseProduct />
-        <TestBlock /> */}
-        <ChoosePage />
+        <Strategy />
+        <TestBlock />
+        <Questions /> */}
+        {/* <ChoosePage /> */}
+        <PopUp/>
       </Wrapper>
     </>
   );

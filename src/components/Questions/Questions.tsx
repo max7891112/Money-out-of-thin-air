@@ -1,4 +1,5 @@
 // import { Slider } from "./Slider";
+import clsx from "clsx";
 import { Slider } from "./Slider";
 import style from "./questions.module.scss";
 
@@ -15,7 +16,7 @@ export const Questions = () => {
     <>
       <section className={style.questions}>
         <div className={style.wrapper}>
-          <h2 className={style.title}>Популярные запросы</h2>
+          <h2 className={clsx(style.title, '_white-color')}>Популярные запросы</h2>
           <Slider></Slider>
         </div>
       </section>

@@ -15,78 +15,30 @@ export const ChooseProduct = () => {
             банковский продукт
           </p>
           <div className={style.containerLink}>
-            <CardItemProduct nameProduct="Кредитные карты" countOffer="123 предложения"/>
-            <CardItemProduct nameProduct="Дебетовые карты" countOffer="123 предложения"/>
-            <CardItemProduct nameProduct="Программы лояльности" countOffer="123 предложения"/>
-            <CardItemProduct nameProduct="Вклады" countOffer="123 предложения"/>
-            <CardItemProduct nameProduct="Инвестиции" countOffer="123 предложения"/>
-            <CardItemProduct nameProduct="Инвестиции" countOffer="123 предложения"/>
-            {/* <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div>
-            <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div>
-            <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div>
-            <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div>
-            <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div>
-            <div className={clsx(style.itemLink, "_gray-background")}>
-              <p className={style.productName}>Кредитные карты</p>
-              <div className={style.linkDownPart}>
-                <img
-                  src="src\components\chooseProduct\img\arrow.svg"
-                  alt=""
-                  className={style.imgArrow}
-                />
-                <p className={style.countOffer}>123 предложения</p>
-              </div>
-            </div> */}
+            <CardItemProduct
+              nameProduct="Кредитные карты"
+              countOffer="123 предложения"
+            />
+            <CardItemProduct
+              nameProduct="Дебетовые карты"
+              countOffer="123 предложения"
+            />
+            <CardItemProduct
+              nameProduct="Программы лояльности"
+              countOffer="123 предложения"
+            />
+            <CardItemProduct
+              nameProduct="Вклады"
+              countOffer="123 предложения"
+            />
+            <CardItemProduct
+              nameProduct="Инвестиции"
+              countOffer="123 предложения"
+            />
+            <CardItemProduct
+              nameProduct="Инвестиции"
+              countOffer="123 предложения"
+            />
           </div>
         </div>
       </div>

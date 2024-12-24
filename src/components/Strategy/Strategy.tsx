@@ -5,7 +5,7 @@ export const Strategy = () => {
     <>
       <section className={style.strategy}>
         <div className={clsx("_content-frame", style.wrapper)}>
-          <h2 className={style.title}>
+          <h2 className={clsx(style.title, '_white-color')}>
             Воспользуйтесь
             <br /> готовыми
             <br /> стратегиями
@@ -18,7 +18,7 @@ export const Strategy = () => {
               <p>Краткосрочные</p>
             </div>
             <div className={style.cards}>
-              <div className={style.card}>
+              <div className={clsx(style.card, '_white-color')}>
                 <h3 className={style.cardTitle}>Название стратегии</h3>
                 <div className={style.cardDescription}>
                   <p>Такая-то карта</p>
@@ -37,7 +37,7 @@ export const Strategy = () => {
                   </svg>
                 </a>
               </div>
-              <div className={style.card}>
+              <div className={clsx(style.card, '_white-color')}>
                 <h3 className={style.cardTitle}>Название стратегии</h3>
                 <div className={style.cardDescription}>
                   <p>Такая-то карта</p>
@@ -56,7 +56,7 @@ export const Strategy = () => {
                   </svg>
                 </a>
               </div>
-              <div className={style.card}>
+              <div className={clsx(style.card, '_white-color')}>
                 <h3 className={style.cardTitle}>Название стратегии</h3>
                 <div className={style.cardDescription}>
                   <p>Такая-то карта</p>
