@@ -1,14 +1,9 @@
-import clsx from "clsx";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import style from "./popUp.module.scss";
 import { InputValue } from "./UI/InputValue/InputValue";
-import { Slider } from "@mui/material";
+import { SliderRange } from "./UI/SliderRange/SliderRange";
 
 export const PopUp = () => {
-
-  function valuetext(value: number) {
-    return `${value}°C`;
-  }
-
   return (
     <div className={style.container}>
       <div className="_content-frame">
@@ -64,30 +59,11 @@ export const PopUp = () => {
                   </div>
                 </div>
                 <div className={style.rightPart}>
-                  <div className={style.rangeBlock}>
-                    <p className={style.nameRangeBlock}>Льготный период</p>
-                    <input
-                      className={style.range}
-                      type="range"
-                      min="1"
-                      max="120"
-                      value="90"
-                    />
-                    <Slider
-                      getAriaLabel={() => "Minimum distance"}
-                      value={0}
-                      onChange={() => {}}
-                      valueLabelDisplay="auto"
-                      getAriaValueText={valuetext}
-                      disableSwap
-                    />
-                  </div>
-                  <div className={style.rangeBlock}>
-                    <p className={style.nameRangeBlock}>Льготный период</p>
-                    <input type="range" min="1" max="120" value="50" />
-                  </div>
+                  <SliderRange name="Льготный период" />
+                  <SliderRange name="Беспроцентный период" />
                   <div className={style.typeBonusBlock}>
                     <p className={style.nameBonus}>Тип бонусов</p>
+          
                     <input className={style.valueBonus} type="text" />
                   </div>
                 </div>

@@ -13,7 +13,7 @@
   color: #fff;
 }
 .boxForParts {
-  padding: 30px 30px 30px 20px;
+  padding: 40px 50px 30px 50px;
 }
 .upPart {
   display: flex;
@@ -28,6 +28,7 @@
 .crossSvg {
 }
 .downPart {
+  display: flex;
 }
 .leftPart {
 }
@@ -82,10 +83,13 @@
 .lastBorder {
 }
 .rightPart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 .rangeBlock {
-}
-.nameRangeBlock {
 }
 .range {
     width: 258px;
@@ -102,3 +106,7 @@
 
 .textField {
 }
+
+// .slider.slider {
+//   color: #fff;
+// }
