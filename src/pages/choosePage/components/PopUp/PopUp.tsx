@@ -1,9 +1,24 @@
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
 import style from "./popUp.module.scss";
 import { InputValue } from "./UI/InputValue/InputValue";
 import { SliderRange } from "./UI/SliderRange/SliderRange";
+import { useState } from "react";
+import { CustomSvgIcon } from "./UI/checkArrow/CheckArrow";
 
 export const PopUp = () => {
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };
+
   return (
     <div className={style.container}>
       <div className="_content-frame">
@@ -63,8 +78,44 @@ export const PopUp = () => {
                   <SliderRange name="Беспроцентный период" />
                   <div className={style.typeBonusBlock}>
                     <p className={style.nameBonus}>Тип бонусов</p>
-          
-                    <input className={style.valueBonus} type="text" />
+                    <Box
+                      sx={{
+                        ".MuiInputLabel-root.Mui-focused": { display: "none" },
+                        ".MuiInputLabel-root": { display: "none" },
+                        ".MuiSelect-root.Mui-focused": { borderColor: "#fff" },
+                      }}
+                    >
+                      <FormControl
+                        fullWidth
+                        sx={{ width: "279px", height: "41px" }}
+                      >
+                        <InputLabel
+                          id="demo-simple-select-label"
+                          sx={{
+                            ".MuiInputLabel-root.Mui-focused": {
+                              color: "#fff",
+                            },
+                          }}
+                        >
+                          Age
+                        </InputLabel>
+
+                        <Select
+                          sx={{ bgcolor: "#000", color: "#808080" }}
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          label=""
+                          onChange={handleChange}
+                          IconComponent={CustomSvgIcon}
+                          size="small"
+                        >
+                          <MenuItem value={10}>Мили</MenuItem>
+                          <MenuItem value={20}>Внутренняя валюта</MenuItem>
+                          <MenuItem value={30}>Рубли</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Box>
                   </div>
                 </div>
               </div>
