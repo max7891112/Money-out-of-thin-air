@@ -30,7 +30,7 @@ export const App = () => {
         <Strategy />
         <TestBlock />
         <Questions /> */}
-        {/* <ChoosePage /> */}
+        <ChoosePage />
         <PopUp/>
       </Wrapper>
     </>

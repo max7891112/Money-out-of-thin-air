@@ -18,6 +18,10 @@
 .upPart {
   display: flex;
   justify-content: space-between;
+
+  & svg {
+    cursor: pointer;
+  }
 }
 .title {
   font-size: 26px;
@@ -92,10 +96,10 @@
 .rangeBlock {
 }
 .range {
-    width: 258px;
-    height: 1px;
-    background-color: #fff;
-    appearance: none;
+  width: 258px;
+  height: 1px;
+  background-color: #fff;
+  appearance: none;
 }
 .typeBonusBlock {
   padding-top: 21px;
