@@ -18,7 +18,7 @@ export const InputValue = (props: InputValuePropsType) => {
           type="text"
           className={style.firstBorder}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue(e.currentTarget.value)}
         />
       </div>
     </div>
