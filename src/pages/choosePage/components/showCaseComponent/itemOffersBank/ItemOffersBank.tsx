@@ -47,56 +47,43 @@ const ListOfBanks: ListOfBanksType = [
 ];
 
 export const ItemOffersBank = () => {
-  const [parametrs, setParametrs] = useState<ParametrType[]>([
-    { title: "Кредитный лимит", value: "1 500 000 Р" },
-    { title: "Процентная ставка", value: "20%" },
-    { title: "Льготный период", value: "120 дней" },
-    { title: "Беспроцентный период", value: "60 дней" },
-    { title: "Сумма на снятие", value: "500 000 Р" },
-  ]);
-
-  const [tags, setTags] = useState<TagsType[]>([
-    "Бесплатное обслуживание",
-    "Льготный период больше 90 дней",
-    "Кэшбэк рублями",
-    "Кэшбэк хуями",
-  ]);
-
   return (
     <div className={style.itemBank}>
-      <div className={style.itemBankUpPart}>
-        <LogoAndInfoBank />
-        <div className={style.mainInfoBankPart}>
-          {parametrs.map((item) => {
-            return (
-              <div
-                key={item.id}
-                className={style.mainInfoBankItem}
-                onClick={() => {
-                  setParametrs(parametrs.filter((el) => el.id !== item.id));
-                }}
-              >
-                <p className={style.nameInfoService}>{item.title}</p>
-                <p className={style.serviceValue}>{item.value}</p>
+      {ListOfBanks.map((item) => {
+        return (
+          <>
+            <div className={style.itemBankUpPart}>
+              <LogoAndInfoBank />
+              <div className={style.mainInfoBankPart}>
+                {item.parametrs.map((params) => {
+                  return (
+                    <div key={item.id} className={style.mainInfoBankItem}>
+                      <p className={style.nameInfoService}>{params.title}</p>
+                      <p className={style.serviceValue}>{params.value}</p>
+                    </div>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-        <div className={style.btnWrapper}>
-          <Button padding="10px 30px" text="Подробнее" />
-        </div>
-      </div>
-      <div className={style.itemDownPart}>
-        <div className={style.tags}>
-          {tags.map((item) => {
-            return (
-              <p className={style.tagValue} onClick={() => {}}>
-                {item}
-              </p>
-            );
-          })}
-        </div>
-      </div>
+
+              <div className={style.btnWrapper}>
+                <Button padding="10px 30px" text="Подробнее" />
+              </div>
+            </div>
+
+            <div className={style.itemDownPart}>
+              <div className={style.tags}>
+                {item.tags?.map((tag) => {
+                  return (
+                    <p className={style.tagValue} onClick={() => {}}>
+                      {tag}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };

@@ -36,25 +36,3 @@ export const App = () => {
     </>
   );
 };
-
-
-const ListOfBanks: ListOfBanksType = [
-  {
-    // id: v1(),
-    nameBank: "Т-банк",
-    nameCard: "Platinum Premium",
-    parametrs: [
-      { title: "Кредитный лимит", value: "1 500 000 Р" },
-      { title: "Процентная ставка", value: "20%" },
-      { title: "Льготный период", value: "120 дней" },
-      { title: "Беспроцентный период", value: "60 дней" },
-      { title: "Сумма на снятие", value: "500 000 Р" },
-    ],
-    tags: [
-      "Бесплатное обслуживание",
-      "Льготный период больше 90 дней",
-      "Кэшбэк рублями",
-      "Кэшбэк хуями",
-    ],
-  },
-];
