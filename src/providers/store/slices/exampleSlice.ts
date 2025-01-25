@@ -24,7 +24,7 @@ type ListOfBanksType = BankItemType[];
 
 type ActionSortType = {
   payload: {
-    sort: "pref" | "limit" | "rate" | "withoutPercent" | "sum";
+    sort: "pref" | "limit" | "rate" | "withoutPercent" | "sum" | "anotherHZ";
   };
 };
 
@@ -36,9 +36,9 @@ const initialState: ListOfBanksType = [
     parametrs: [
       { title: "Кредитный лимит", value: "1 500 000 Р" },
       { title: "Процентная ставка", value: "20%" },
-      { title: "Льготный период", value: "120 дней" },
+      { title: "Льготный период", value: "35 дней" },
       { title: "Беспроцентный период", value: "60 дней" },
-      { title: "Сумма на снятие", value: "500 000 Р" },
+      { title: "Сумма на снятие", value: "150 000 Р" },
     ],
     tags: [
       "Бесплатное обслуживание",
@@ -56,7 +56,7 @@ const initialState: ListOfBanksType = [
       { title: "Процентная ставка", value: "25%" },
       { title: "Льготный период", value: "120 дней" },
       { title: "Беспроцентный период", value: "60 дней" },
-      { title: "Сумма на снятие", value: "50 000 Р" },
+      { title: "Сумма на снятие", value: "15 000 Р" },
     ],
     tags: ["Льготный период больше 90 дней", "Кэшбэк хуями"],
   },
@@ -67,7 +67,7 @@ const initialState: ListOfBanksType = [
     parametrs: [
       { title: "Кредитный лимит", value: "1 300 000 Р" },
       { title: "Процентная ставка", value: "20%" },
-      { title: "Льготный период", value: "60 дней" },
+      { title: "Льготный период", value: "70 дней" },
       { title: "Беспроцентный период", value: "60 дней" },
       { title: "Сумма на снятие", value: "25 000 Р" },
     ],
@@ -80,7 +80,7 @@ const initialState: ListOfBanksType = [
     parametrs: [
       { title: "Кредитный лимит", value: "500 000 Р" },
       { title: "Процентная ставка", value: "23%" },
-      { title: "Льготный период", value: "90 дней" },
+      { title: "Льготный период", value: "50 дней" },
       { title: "Беспроцентный период", value: "80 дней" },
       { title: "Сумма на снятие", value: "50 000 Р" },
     ],
@@ -88,31 +88,52 @@ const initialState: ListOfBanksType = [
   },
 ];
 
-// const initialState = { count: 1 };
-
 const exampleSlice = createSlice({
   name: "exampleSlice",
   initialState,
   reducers: {
-    // increment: (state) => {
-    //   state.count = state.count + 1;
-    //   return state;
-    // },
-    // decrement: (state) => {
-    //   state.count = state.count - 1;
-    //   return state;
-    // },
     sortList: (state, action: ActionSortType) => {
       // "pref" | "limit" | "rate" | "withoutPercent" | "sum";
       switch (action.payload.sort) {
         case "pref":
-          console.log(state[0])
+          state.sort((a, b) =>
+            +a.parametrs[0].value.match(/\d/g).join("") <
+            +b.parametrs[0].value.match(/\d/g).join("")
+              ? 1
+              : -1
+          );
           return state;
         case "limit":
+          state.sort((a, b) =>
+            +a.parametrs[4].value.match(/\d/g).join("") <
+            +b.parametrs[4].value.match(/\d/g).join("")
+              ? 1
+              : -1
+          );
           return state;
         case "withoutPercent":
+          state.sort((a, b) =>
+            +a.parametrs[2].value.match(/\d/g).join("") <
+            +b.parametrs[2].value.match(/\d/g).join("")
+              ? 1
+              : -1
+          );
           return state;
         case "sum":
+          state.sort((a, b) =>
+            +a.parametrs[3].value.match(/\d/g).join("") <
+            +b.parametrs[2].value.match(/\d/g).join("")
+              ? 1
+              : -1
+          );
+          return state;
+        case "anotherHZ":
+          state.sort((a, b) =>
+            +a.parametrs[1].value.match(/\d/g).join("") <
+            +b.parametrs[1].value.match(/\d/g).join("")
+              ? 1
+              : -1
+          );
           return state;
         default:
           return state;

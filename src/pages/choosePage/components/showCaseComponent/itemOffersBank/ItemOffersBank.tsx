@@ -26,7 +26,7 @@ export const ItemOffersBank = () => {
               <div className={style.mainInfoBankPart}>
                 {item.parametrs.map((params) => {
                   return (
-                    <div key={uuid()} className={style.mainInfoBankItem}>
+                    <div onClick={() => dispatch(sortList({sort: "anotherHZ"}))} key={uuid()} className={style.mainInfoBankItem}>
                       <p className={style.nameInfoService}>{params.title}</p>
                       <p className={style.serviceValue}>{params.value}</p>
                     </div>
