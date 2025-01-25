@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import exampleSlice from "./slices/exampleSlice";
+import comparsionSlice from './slices/comparsionSlice';
 
 export const store = configureStore({
   reducer: {
     easyMoney: exampleSlice,
+    comparsionProduct: comparsionSlice
   },
 });
 

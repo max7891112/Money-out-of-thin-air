@@ -1,29 +1,19 @@
-import clsx from "clsx";
 import { SortImg } from "./img/SortImg";
 import style from "./showCaseComponent.module.scss";
 import { ItemOffersBank } from "./itemOffersBank/ItemOffersBank";
-import { useState } from "react";
+import {v4 as uuid} from 'uuid';
 
-type FiltersType = {
-  id: number;
-  bank: string;
-  tags: string[];
-};
+type FiltersType = string[];
 
 export const ShowCaseComponent = () => {
-  const [filters, setFilters] = useState<FiltersType>({
-    id: 1,
-    bank: 'alfa',
-    tags: [
-      "По льготному периоду",
-      "По кредитному лимиту",
-      "По процентной ставке",
-      "По беспроцентному периоду",
-      "По сумме снятия",
-    ],
-  });
 
-  const [count, setCount] = useState(1);
+  const filters: FiltersType = [
+    "По льготному периоду",
+    "По кредитному лимиту",
+    "По процентной ставке",
+    "По беспроцентному периоду",
+    "По сумме снятия",
+  ];
 
   return (
     <div className={style.showCaseComponent}>
@@ -32,17 +22,12 @@ export const ShowCaseComponent = () => {
           <div className={style.filterPart}>
             <SortImg />
             <div className={style.filterPartChoose}>
-              {filters.tags.map((i) => {
+              {filters.map((i) => {
                 return (
-                  <button className={style.filterPartChooseName}>
-                    {i}
-                  </button>
+                  <button key={uuid()} className={style.filterPartChooseName}>{i}</button>
                 );
               })}
             </div>
-            <p className={clsx(style.counterOffer, "_white-color")} onClick={() => setCount(count + 1)}>
-              {count}
-            </p>
           </div>
           <div className={style.offersBankPart}>
             <ItemOffersBank />

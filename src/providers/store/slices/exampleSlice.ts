@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit/react";
-import {v1} from 'uuid';
+import { v4 as uuid } from "uuid";
 
 type ParametrType = {
   title: string;
@@ -22,9 +22,15 @@ type BankItemType = {
 
 type ListOfBanksType = BankItemType[];
 
+type ActionSortType = {
+  payload: {
+    sort: "pref" | "limit" | "rate" | "withoutPercent" | "sum";
+  };
+};
+
 const initialState: ListOfBanksType = [
   {
-    id: v1(),
+    id: uuid(),
     nameBank: "Т-банк",
     nameCard: "Platinum Premium",
     parametrs: [
@@ -40,6 +46,45 @@ const initialState: ListOfBanksType = [
       "Кэшбэк рублями",
       "Кэшбэк хуями",
     ],
+  },
+  {
+    id: uuid(),
+    nameBank: "Сбербанк",
+    nameCard: "120 дней без %",
+    parametrs: [
+      { title: "Кредитный лимит", value: "1 000 000 Р" },
+      { title: "Процентная ставка", value: "25%" },
+      { title: "Льготный период", value: "120 дней" },
+      { title: "Беспроцентный период", value: "60 дней" },
+      { title: "Сумма на снятие", value: "50 000 Р" },
+    ],
+    tags: ["Льготный период больше 90 дней", "Кэшбэк хуями"],
+  },
+  {
+    id: uuid(),
+    nameBank: "Альфа",
+    nameCard: "Премиум кредит",
+    parametrs: [
+      { title: "Кредитный лимит", value: "1 300 000 Р" },
+      { title: "Процентная ставка", value: "20%" },
+      { title: "Льготный период", value: "60 дней" },
+      { title: "Беспроцентный период", value: "60 дней" },
+      { title: "Сумма на снятие", value: "25 000 Р" },
+    ],
+    tags: ["Льготный период больше 90 дней", "Кэшбэк хуями", "Кэшбэк рублями"],
+  },
+  {
+    id: uuid(),
+    nameBank: "СПБ банк",
+    nameCard: "Ясно",
+    parametrs: [
+      { title: "Кредитный лимит", value: "500 000 Р" },
+      { title: "Процентная ставка", value: "23%" },
+      { title: "Льготный период", value: "90 дней" },
+      { title: "Беспроцентный период", value: "80 дней" },
+      { title: "Сумма на снятие", value: "50 000 Р" },
+    ],
+    tags: ["Льготный период больше 90 дней", "Кэшбэк хуями"],
   },
 ];
 
@@ -57,8 +102,24 @@ const exampleSlice = createSlice({
     //   state.count = state.count - 1;
     //   return state;
     // },
+    sortList: (state, action: ActionSortType) => {
+      // "pref" | "limit" | "rate" | "withoutPercent" | "sum";
+      switch (action.payload.sort) {
+        case "pref":
+          console.log(state[0])
+          return state;
+        case "limit":
+          return state;
+        case "withoutPercent":
+          return state;
+        case "sum":
+          return state;
+        default:
+          return state;
+      }
+    },
   },
 });
 
-// export const { increment, decrement } = exampleSlice.actions;
+export const { sortList } = exampleSlice.actions;
 export default exampleSlice.reducer;

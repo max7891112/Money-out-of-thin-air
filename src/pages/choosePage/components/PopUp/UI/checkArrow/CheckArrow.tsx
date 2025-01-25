@@ -8,14 +8,14 @@ export function CustomSvgIcon(props) {
       <path
         d="M14.7694 1.25L7.38477 8.75"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M1.23047 1.25L7.38431 8.75"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </SvgIcon>
   );
