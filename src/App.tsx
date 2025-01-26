@@ -23,15 +23,15 @@ export const App = () => {
   return (
     <>
       <Wrapper>
-        {/* <Header />
+        <Header />
         <SloganBlock />
         <AboutUs />
         <ChooseProduct />
         <Strategy />
         <TestBlock />
-        <Questions /> */}
-        <ChoosePage />
-        <PopUp/>
+        <Questions />
+        {/* <ChoosePage />
+        <PopUp/> */}
       </Wrapper>
     </>
   );

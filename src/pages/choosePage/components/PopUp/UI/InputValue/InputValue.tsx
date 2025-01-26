@@ -3,7 +3,7 @@ import style from "./inputValue.module.scss";
 
 type InputValuePropsType = {
   text: "от" | "до";
-  currency: "$" | "₽" | "€";
+  currency: "$" | "₽" | "€" | "%";
 };
 
 export const InputValue = (props: InputValuePropsType) => {

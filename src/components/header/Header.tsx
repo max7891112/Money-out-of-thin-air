@@ -1,5 +1,25 @@
 import { Button } from "../../UI/Button/Button";
 import style from "./header.module.scss";
+
+type baseTitleType =
+  | "Вклады"
+  | "Кредитные карты"
+  | "Дебетовые карты"
+  | "Инвестиции"
+  | "Программы лояльности"
+  | "Акции"
+  | "Банки";
+
+const baseTitle: baseTitleType[] = [
+  "Вклады",
+  "Кредитные карты",
+  "Дебетовые карты",
+  "Инвестиции",
+  "Программы лояльности",
+  "Акции",
+  "Банки",
+];
+
 export const Header = () => {
   return (
     <>
@@ -11,13 +31,9 @@ export const Header = () => {
             </h1>
 
             <div className={style.base}>
-              <div>Вклады</div>
-              <div>Кредитные карты</div>
-              <div>Дебетовые карты</div>
-              <div>Инвестиции</div>
-              <div>Программы лояльности</div>
-              <div>Акции</div>
-              <div>Банки</div>
+              {baseTitle.map((item) => (
+                <div>{item}</div>
+              ))}
             </div>
 
             <div className={style.buttons}>

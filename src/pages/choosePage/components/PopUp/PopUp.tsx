@@ -13,12 +13,21 @@ import { useState } from "react";
 import { CustomSvgIcon } from "./UI/checkArrow/CheckArrow";
 import { CrossSvg } from "./UI/crossSvg/CrossSvg";
 
+type ParametrType = "Кредитный лимит" | "Сумма на снятие" | "Процентная ставка";
+type ParametrsType = { title: ParametrType; symbol: "$" | "₽" | "€" | "%" };
+
 export const PopUp = () => {
   const [age, setAge] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
+
+  const parametrs: ParametrsType[] = [
+    { title: "Кредитный лимит", symbol: "₽" },
+    { title: "Сумма на снятие", symbol: "₽" },
+    { title: "Процентная ставка", symbol: "%" },
+  ];
 
   return (
     <div className={style.container}>
@@ -32,27 +41,17 @@ export const PopUp = () => {
               </div>
               <div className={style.downPart}>
                 <div className={style.leftPart}>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Кредитный лимит</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Сумма на снятие</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Процентная ставка</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
+                  {parametrs.map((item) => {
+                    return (
+                      <div className={style.itemBorders}>
+                        <p className={style.itemNames}>{item.title}</p>
+                        <div className={style.valuesBorder}>
+                          <InputValue text="от" currency={item.symbol} />
+                          <InputValue text="до" currency={item.symbol} />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className={style.rightPart}>
                   <SliderRange name="Льготный период" />
