@@ -5,7 +5,6 @@ import {
   useAppSelector,
 } from "../../../../../providers/store/hooks";
 import { addItemForComparsion } from '../../../../../providers/store/slices/comparsionSlice';
-import { sortList } from "../../../../../providers/store/slices/exampleSlice";
 import style from "./itemOffersBank.module.scss";
 import {v4 as uuid} from 'uuid'
 
@@ -26,7 +25,7 @@ export const ItemOffersBank = () => {
               <div className={style.mainInfoBankPart}>
                 {item.parametrs.map((params) => {
                   return (
-                    <div onClick={() => dispatch(sortList({sort: "anotherHZ"}))} key={uuid()} className={style.mainInfoBankItem}>
+                    <div key={uuid()} className={style.mainInfoBankItem}>
                       <p className={style.nameInfoService}>{params.title}</p>
                       <p className={style.serviceValue}>{params.value}</p>
                     </div>

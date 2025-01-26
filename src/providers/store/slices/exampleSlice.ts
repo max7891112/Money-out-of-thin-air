@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit/react";
+import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 type ParametrType = {
@@ -24,7 +25,7 @@ type ListOfBanksType = BankItemType[];
 
 type ActionSortType = {
   payload: {
-    sort: "pref" | "limit" | "rate" | "withoutPercent" | "sum" | "anotherHZ";
+    sort: "CredLim" | "SumSnat" | "LgotPer" | "BesprPer" | "ProcSt" | 'Reverse';
   };
 };
 
@@ -78,7 +79,7 @@ const initialState: ListOfBanksType = [
     nameBank: "СПБ банк",
     nameCard: "Ясно",
     parametrs: [
-      { title: "Кредитный лимит", value: "500 000 Р" },
+      { title: "Кредитный лимит", value: "500 000 Р" }, // порядок title не менять)))))
       { title: "Процентная ставка", value: "23%" },
       { title: "Льготный период", value: "50 дней" },
       { title: "Беспроцентный период", value: "80 дней" },
@@ -93,49 +94,32 @@ const exampleSlice = createSlice({
   initialState,
   reducers: {
     sortList: (state, action: ActionSortType) => {
-      // "pref" | "limit" | "rate" | "withoutPercent" | "sum";
+      function sortFunc(a: BankItemType, b: BankItemType, number: number) {
+        return +a.parametrs[number].value.match(/\d/g).join("") <
+          +b.parametrs[number].value.match(/\d/g).join("")
+          ? 1
+          : -1;
+      }
+
       switch (action.payload.sort) {
-        case "pref":
-          state.sort((a, b) =>
-            +a.parametrs[0].value.match(/\d/g).join("") <
-            +b.parametrs[0].value.match(/\d/g).join("")
-              ? 1
-              : -1
-          );
+        case "CredLim":
+          state.sort((a, b) => sortFunc(a, b, 0));
           return state;
-        case "limit":
-          state.sort((a, b) =>
-            +a.parametrs[4].value.match(/\d/g).join("") <
-            +b.parametrs[4].value.match(/\d/g).join("")
-              ? 1
-              : -1
-          );
+        case "SumSnat":
+          state.sort((a, b) => sortFunc(a, b, 4));
           return state;
-        case "withoutPercent":
-          state.sort((a, b) =>
-            +a.parametrs[2].value.match(/\d/g).join("") <
-            +b.parametrs[2].value.match(/\d/g).join("")
-              ? 1
-              : -1
-          );
+        case "LgotPer":
+          state.sort((a, b) => sortFunc(a, b, 2));
           return state;
-        case "sum":
-          state.sort((a, b) =>
-            +a.parametrs[3].value.match(/\d/g).join("") <
-            +b.parametrs[2].value.match(/\d/g).join("")
-              ? 1
-              : -1
-          );
+        case "BesprPer":
+          state.sort((a, b) => sortFunc(a, b, 3));
           return state;
-        case "anotherHZ":
-          state.sort((a, b) =>
-            +a.parametrs[1].value.match(/\d/g).join("") <
-            +b.parametrs[1].value.match(/\d/g).join("")
-              ? 1
-              : -1
-          );
-          return state;
-        default:
+          case "ProcSt":
+            state.sort((a, b) => sortFunc(a, b, 1));
+            return state;
+          case "Reverse":
+            return state.reverse();
+          default:
           return state;
       }
     },

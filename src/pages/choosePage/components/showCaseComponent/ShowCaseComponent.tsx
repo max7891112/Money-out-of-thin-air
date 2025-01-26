@@ -1,18 +1,24 @@
 import { SortImg } from "./img/SortImg";
 import style from "./showCaseComponent.module.scss";
 import { ItemOffersBank } from "./itemOffersBank/ItemOffersBank";
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from "uuid";
+import { useAppDispatch } from "../../../../providers/store/hooks";
+import { sortList } from "../../../../providers/store/slices/exampleSlice";
 
-type FiltersType = string[];
+type FiltersType = {
+  title: string;
+  sortName: string;
+};
 
 export const ShowCaseComponent = () => {
+  const dispatch = useAppDispatch();
 
-  const filters: FiltersType = [
-    "По льготному периоду",
-    "По кредитному лимиту",
-    "По процентной ставке",
-    "По беспроцентному периоду",
-    "По сумме снятия",
+  const filters: FiltersType[] = [
+    { title: "По льготному периоду", sortName: "LgotPer" },
+    { title: "По кредитному лимиту", sortName: "CredLim" },
+    { title: "По процентной ставке", sortName: "ProcSt" },
+    { title: "По беспроцентному периоду", sortName: "BesprPer" },
+    { title: "По сумме снятия", sortName: "SumSnat" },
   ];
 
   return (
@@ -24,7 +30,13 @@ export const ShowCaseComponent = () => {
             <div className={style.filterPartChoose}>
               {filters.map((i) => {
                 return (
-                  <button key={uuid()} className={style.filterPartChooseName}>{i}</button>
+                  <button
+                    onClick={() => dispatch(sortList({ sort: i.sortName }))}
+                    key={uuid()}
+                    className={style.filterPartChooseName}
+                  >
+                    {i.title}
+                  </button>
                 );
               })}
             </div>
