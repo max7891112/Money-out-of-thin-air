@@ -1,5 +1,6 @@
 import { Button } from "../../UI/Button/Button";
 import style from "./header.module.scss";
+import {v4 as uuid} from 'uuid';
 
 type baseTitleType =
   | "Вклады"
@@ -32,7 +33,7 @@ export const Header = () => {
 
             <div className={style.base}>
               {baseTitle.map((item) => (
-                <div>{item}</div>
+                <div key={uuid()}>{item}</div>
               ))}
             </div>
 

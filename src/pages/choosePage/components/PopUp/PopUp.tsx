@@ -13,6 +13,7 @@ import { useState } from "react";
 import { CustomSvgIcon } from "./UI/checkArrow/CheckArrow";
 import { CrossSvg } from "./UI/crossSvg/CrossSvg";
 import { Button } from "../../../../UI/Button/Button";
+import {v4 as uuid} from 'uuid';
 
 type ParametrType = "Кредитный лимит" | "Сумма на снятие" | "Процентная ставка";
 type ParametrsType = { title: ParametrType; symbol: "$" | "₽" | "€" | "%" };
@@ -44,7 +45,7 @@ export const PopUp = () => {
                 <div className={style.leftPart}>
                   {parametrs.map((item) => {
                     return (
-                      <div className={style.itemBorders}>
+                      <div key={uuid()} className={style.itemBorders}>
                         <p className={style.itemNames}>{item.title}</p>
                         <div className={style.valuesBorder}>
                           <InputValue text="от" currency={item.symbol} />

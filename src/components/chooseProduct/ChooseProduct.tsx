@@ -1,6 +1,7 @@
 import { CardItemProduct } from "../../UI/cardItemProduct/CardItemProduct";
 import style from "./chooseProduct.module.scss";
 import clsx from "clsx";
+import { v4 as uuid } from "uuid";
 
 type productType = {
   name: string;
@@ -34,6 +35,7 @@ export const ChooseProduct = () => {
                 <CardItemProduct
                   nameProduct={item.name}
                   countOffer={item.count}
+                  key={uuid()}
                 />
               );
             })}

@@ -1,5 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/scss";
+import { v4 as uuid } from "uuid";
+import style from "./questions.module.scss";
+import clsx from "clsx";
+
 const data = [
   "Кредитные карты для путешествий",
   "Кредитные карты для путешествий",
@@ -8,8 +12,6 @@ const data = [
   "Кредитные карты для путешествий",
   "Кредитные карты для путешествий",
 ];
-import style from "./questions.module.scss";
-import clsx from "clsx";
 export const Slider = () => {
   return (
     <Swiper
@@ -20,7 +22,7 @@ export const Slider = () => {
       // className={style.wrapper}
     >
       <SwiperSlide>
-        <div className={clsx(style.slide, '_white-color')}>
+        <div className={clsx(style.slide, "_white-color")}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -43,7 +45,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={clsx(style.slide, '_white-color')}>
+        <div className={clsx(style.slide, "_white-color")}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -66,7 +68,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={clsx(style.slide, '_white-color')}>
+        <div className={clsx(style.slide, "_white-color")}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (
@@ -89,7 +91,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className={clsx(style.slide, '_white-color')}>
+        <div className={clsx(style.slide, "_white-color")}>
           <h3 className={style.slideTitle}>Кредитные карты</h3>
           <div className={style.container}>
             {data.map((item: string) => (

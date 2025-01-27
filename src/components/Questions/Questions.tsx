@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Slider } from "./Slider";
 import style from "./questions.module.scss";
 
+
 // const data = [
 //   "Кредитные карты для путешествий",
 //   "Кредитные карты для путешествий",

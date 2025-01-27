@@ -14,19 +14,18 @@ import { ChoosePage } from "./pages/choosePage/components/ChoosePage";
 import { PopUp } from "./pages/choosePage/components/PopUp/PopUp";
 
 export const App = () => {
-
   return (
     <>
       <Wrapper>
-        {/* <Header />
         <SloganBlock />
+        <Header />
         <AboutUs />
         <ChooseProduct />
         <Strategy />
         <TestBlock />
         <Questions />
-        <ChoosePage /> */}
-        <PopUp/>
+        <ChoosePage />
+        <PopUp />
       </Wrapper>
     </>
   );

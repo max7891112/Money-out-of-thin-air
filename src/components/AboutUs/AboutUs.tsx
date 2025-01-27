@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import style from "./aboutUs.module.scss";
+import {v4 as uuid} from 'uuid';
 
 type figureType = {
   number: string;
@@ -28,7 +29,7 @@ export const AboutUs = () => {
             <div className={style.figures}>
               {figuries.map((item) => {
                 return (
-                  <div className={style.figure}>
+                  <div key={uuid()} className={style.figure}>
                     <p className={style.number}>{item.number}</p>
                     <p className={clsx(style.description, "_white-color")}>
                       {item.description}
