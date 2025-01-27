@@ -34,7 +34,7 @@ export const ItemOffersBank = () => {
               </div>
 
               <div className={style.btnWrapper} onClick={() => {dispatch(addItemForComparsion({bank: item}))}}>
-                <Button padding="10px 30px" text="Подробнее" />
+                <Button padding="10px 30px" text="Подробнее" variant="green"/>
               </div>
             </div>
             <div className={style.itemDownPart}>

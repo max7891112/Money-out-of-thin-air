@@ -1,3 +1,4 @@
+import { Button } from "../../UI/Button/Button";
 import style from "./strategy.module.scss";
 import clsx from "clsx";
 export const Strategy = () => {
@@ -76,7 +77,7 @@ export const Strategy = () => {
                 </a>
               </div>
             </div>
-            <button className={style.button}>Все стратегии</button>
+            <Button padding="10px 0px" text="Все стратегии" variant="green" width="100%"/>
           </div>
         </div>
       </section>

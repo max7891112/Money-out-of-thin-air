@@ -1,4 +1,3 @@
-// import { useAppDispatch, useAppSelector } from "./providers/store/hooks";
 import { Header } from "./components/header/Header";
 import { Wrapper } from "./Wrapper";
 import { AboutUs } from "./components/AboutUs/AboutUs";
@@ -14,24 +13,20 @@ import { TestBlock } from "./components/testBlock/testBlock";
 import { ChoosePage } from "./pages/choosePage/components/ChoosePage";
 import { PopUp } from "./pages/choosePage/components/PopUp/PopUp";
 
-// import { increment, decrement } from "./providers/store/slices/exampleSlice";
-// import "./style/App.scss";
-
 export const App = () => {
-  // const dispatch = useAppDispatch();
-  // const counter = useAppSelector((state) => state.easyMoney.count);
+
   return (
     <>
       <Wrapper>
-        <Header />
+        {/* <Header />
         <SloganBlock />
         <AboutUs />
         <ChooseProduct />
         <Strategy />
         <TestBlock />
         <Questions />
-        {/* <ChoosePage />
-        <PopUp/> */}
+        <ChoosePage /> */}
+        <PopUp/>
       </Wrapper>
     </>
   );

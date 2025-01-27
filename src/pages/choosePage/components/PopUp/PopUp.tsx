@@ -12,6 +12,7 @@ import { SliderRange } from "./UI/SliderRange/SliderRange";
 import { useState } from "react";
 import { CustomSvgIcon } from "./UI/checkArrow/CheckArrow";
 import { CrossSvg } from "./UI/crossSvg/CrossSvg";
+import { Button } from "../../../../UI/Button/Button";
 
 type ParametrType = "Кредитный лимит" | "Сумма на снятие" | "Процентная ставка";
 type ParametrsType = { title: ParametrType; symbol: "$" | "₽" | "€" | "%" };
@@ -98,6 +99,10 @@ export const PopUp = () => {
                     </Box>
                   </div>
                 </div>
+              </div>
+              <div className={style.footer}>
+                <Button text="Очистить фильтры" padding="10px 30px" variant="transparent"/>
+                <Button text="Подобрать" padding="10px 30px" variant="green" />
               </div>
             </div>
           </div>

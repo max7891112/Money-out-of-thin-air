@@ -1,5 +1,5 @@
 import { Button } from "../../../../UI/Button/Button";
-import { FilterSvg } from "./img/FilterSvg";
+import { SortImg } from "../showCaseComponent/img/SortImg";
 import style from "./sloganChoosePage.module.scss";
 import clsx from "clsx";
 
@@ -32,13 +32,8 @@ export const SloganChoosePage = () => {
                 Рефералки
               </option>
             </select>
-            <button className={clsx(style.btn, "_white-color")}>
-              <div className={style.tbnContainer}>
-                <FilterSvg color={"#fff"} />
-                <p className={style.textBtn}>Фильтры</p>
-              </div>
-            </button>
-            <Button padding="10px 30px" text="Подробнее" />
+            <Button padding="10px 30px" variant="transparent" text="Фильтры" svg={<SortImg/>}/>
+            <Button padding="10px 30px" text="Подробнее" variant="green"/>
           </div>
         </div>
       </div>

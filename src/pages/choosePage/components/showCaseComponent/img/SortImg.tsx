@@ -5,13 +5,13 @@ export const SortImg = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div onClick={() => dispatch(sortList({sort:"Reverse"}))}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
         height="20"
         viewBox="0 0 20 20"
         fill="none"
+        onClick={() => dispatch(sortList({sort:"Reverse"}))}
       >
         <g clipPath="url(#clip0_244_315)">
           <path
@@ -50,6 +50,5 @@ export const SortImg = () => {
           </clipPath>
         </defs>
       </svg>
-    </div>
   );
 };
