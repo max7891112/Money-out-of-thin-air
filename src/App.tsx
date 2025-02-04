@@ -12,20 +12,22 @@ import { ChooseProduct } from "./components/chooseProduct/ChooseProduct";
 import { TestBlock } from "./components/testBlock/testBlock";
 import { ChoosePage } from "./pages/choosePage/components/ChoosePage";
 import { PopUp } from "./pages/choosePage/components/PopUp/PopUp";
+import { PopUpItemBank } from "./pages/choosePage/components/PopUpItemBank/PopUpItemBank";
 
 export const App = () => {
   return (
     <>
       <Wrapper>
+        {/* <Header />
         <SloganBlock />
-        <Header />
         <AboutUs />
         <ChooseProduct />
         <Strategy />
         <TestBlock />
         <Questions />
         <ChoosePage />
-        <PopUp />
+        <PopUp /> */}
+        <PopUpItemBank />
       </Wrapper>
     </>
   );

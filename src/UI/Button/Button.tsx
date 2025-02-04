@@ -6,7 +6,7 @@ type ButtonPropsType = {
   text: string;
   width?: string;
   margin?: string;
-  svg?: any;
+  svg?: JSX.Element;
   addClass?:
     | "_green-color"
     | "_green-background"

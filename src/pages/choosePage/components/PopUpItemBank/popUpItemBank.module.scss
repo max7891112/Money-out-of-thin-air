@@ -1,0 +1,29 @@
+.wrapper {
+  background-color: #212121;
+  max-width: 605px;
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 0 30px 0 40px;
+}
+.upPart {
+  display: flex;
+  padding: 30px 0 30px 0;
+}
+.leftUpPart {
+    min-width: max-content;
+    padding-top: 10px;
+}
+.rightUpPart {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.mainBlock {
+    height: 450px;
+    overflow: auto;
+}
+.downPart {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 30px 30px 0;
+}
