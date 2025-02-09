@@ -1,0 +1,61 @@
+.aboutUs {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 10px 0;
+}
+
+.containerForTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 50px;
+    max-width: 1000px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.figures{
+    display: flex;
+    gap: 100px;
+    padding: 300px 0 0 146px;
+    width: 100%;
+}
+
+.figure{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center
+    
+}
+
+.description{
+    text-align: center;
+}
+
+.number{
+    font-size: 70px;
+    color: #11B14C;
+}
+
+.text{
+    
+    line-height: 21px;
+    padding-left: 10px;
+    padding-top: 80px;
+    width: 100%;
+    p{
+        max-width: 425px;
+    }
+}

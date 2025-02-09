@@ -1,0 +1,52 @@
+.itemBank {
+  background-color: #212121;
+  margin: 20px 0 0 0;
+  border-radius: 15px;
+  padding: 0 35px;
+}
+.itemBankUpPart {
+  display: flex;
+  flex-direction: row;
+  padding-top: 35px;
+}
+.mainInfoBankPart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+.mainInfoBankItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nameInfoService {
+  font-size: 12px;
+  color: #949494;
+}
+.serviceValue {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 6px;
+}
+.btnWrapper {
+  margin-left: auto;
+}
+.itemDownPart {
+  padding: 42px 0 15px 0;
+}
+.tags {
+  display: flex;
+  justify-content: row;
+  gap: 10px;
+}
+.tagValue {
+  display: block;
+  padding: 5px 10px;
+  color: #949494;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #040404;
+}

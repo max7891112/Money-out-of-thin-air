@@ -1,0 +1,42 @@
+.itemLink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 440px;
+    height: 218px;
+    border-radius: 20px;
+    transition:.5s;
+    flex-basis: 100%;
+
+    svg{
+        stroke: white;
+        transition: all .5s ease;
+    }
+
+
+    &:hover{
+        background-color: #373737;
+        color: #11B14C;
+        scale: 0.97;
+        cursor: pointer;
+        svg{
+            stroke: #11B14C;
+        }   
+    }
+}
+.productName {
+    padding: 32px 178px 0px 32px;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 35px;
+}
+.linkDownPart {
+    display: flex;
+    flex-direction: row;
+    padding: 32px;
+    justify-content: space-between;
+    align-items: flex-end;
+} 
+.countOffer {
+    height: min-content;
+}

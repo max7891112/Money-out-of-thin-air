@@ -1,0 +1,23 @@
+.nameBankPart {
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+}
+.logoBank {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ffdd2d;
+}
+.cardAndNameBank {
+  font-size: 16px;
+  padding-left: 15px;
+}
+.cardBank {
+  color: #fff;
+  padding-top: 4px;
+}
+.nameBank {
+  color: #949494;
+  padding-top: 4px;
+}
