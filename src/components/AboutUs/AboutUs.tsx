@@ -1,5 +1,17 @@
 import clsx from "clsx";
 import style from "./aboutUs.module.scss";
+import {v4 as uuid} from 'uuid';
+
+type figureType = {
+  number: string;
+  description: string;
+};
+
+const figuries: figureType[] = [
+  { number: "62", description: "Банков в базе" },
+  { number: "1142", description: "Банковских продукта" },
+  { number: "20+", description: "Стратегии получения прибыли" },
+];
 
 export const AboutUs = () => {
   return (
@@ -15,32 +27,18 @@ export const AboutUs = () => {
           </div>
           <div className={style.container}>
             <div className={style.figures}>
-              <div className={style.figure}>
-                <p className={style.number}>62</p>
-                <p className={clsx(style.description, "_white-color")}>
-                  Банка <br />в базе
-                </p>
-              </div>
-              <div className={style.figure}>
-                <p className={style.number}>1142</p>
-                <p className={clsx(style.description, "_white-color")}>
-                  Банковских
-                  <br />
-                  продукта
-                </p>
-              </div>
-              <div className={style.figure}>
-                <p className={style.number}>20+</p>
-                <p className={clsx(style.description, "_white-color")}>
-                  Стратегий
-                  <br />
-                  получения
-                  <br />
-                  прибыли
-                </p>
-              </div>
+              {figuries.map((item) => {
+                return (
+                  <div key={uuid()} className={style.figure}>
+                    <p className={style.number}>{item.number}</p>
+                    <p className={clsx(style.description, "_white-color")}>
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
-            <div className={clsx(style.text, '_white-color')}>
+            <div className={clsx(style.text, "_white-color")}>
               <p>
                 Мы анализируем предложения банков по ряду направлений (от
                 кредитных карт до брокерских услуг). Вы получаете базу данных со

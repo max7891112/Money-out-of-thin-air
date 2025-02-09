@@ -8,20 +8,18 @@
     transition:.5s;
     flex-basis: 100%;
 
-    svg{
-        stroke: white;
-        transition: all .5s ease;
-    }
-
 
     &:hover{
         background-color: #373737;
         color: #11B14C;
         scale: 0.97;
         cursor: pointer;
-        svg{
-            stroke: #11B14C;
-        }   
+
+        &:hover {
+            svg path {
+                    stroke: #11B14C;
+                   }   
+            }
     }
 }
 .productName {

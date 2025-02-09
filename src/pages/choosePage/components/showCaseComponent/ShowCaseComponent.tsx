@@ -1,29 +1,25 @@
-import clsx from "clsx";
 import { SortImg } from "./img/SortImg";
 import style from "./showCaseComponent.module.scss";
 import { ItemOffersBank } from "./itemOffersBank/ItemOffersBank";
-import { useState } from "react";
+import { v4 as uuid } from "uuid";
+import { useAppDispatch } from "../../../../providers/store/hooks";
+import { sortList } from "../../../../providers/store/slices/exampleSlice";
 
 type FiltersType = {
-  id: number;
-  bank: string;
-  tags: string[];
+  title: string;
+  sortName: string;
 };
 
 export const ShowCaseComponent = () => {
-  const [filters, setFilters] = useState<FiltersType>({
-    id: 1,
-    bank: 'alfa',
-    tags: [
-      "По льготному периоду",
-      "По кредитному лимиту",
-      "По процентной ставке",
-      "По беспроцентному периоду",
-      "По сумме снятия",
-    ],
-  });
+  const dispatch = useAppDispatch();
 
-  const [count, setCount] = useState(1);
+  const filters: FiltersType[] = [
+    { title: "По льготному периоду", sortName: "LgotPer" },
+    { title: "По кредитному лимиту", sortName: "CredLim" },
+    { title: "По процентной ставке", sortName: "ProcSt" },
+    { title: "По беспроцентному периоду", sortName: "BesprPer" },
+    { title: "По сумме снятия", sortName: "SumSnat" },
+  ];
 
   return (
     <div className={style.showCaseComponent}>
@@ -32,17 +28,18 @@ export const ShowCaseComponent = () => {
           <div className={style.filterPart}>
             <SortImg />
             <div className={style.filterPartChoose}>
-              {filters.tags.map((i) => {
+              {filters.map((i) => {
                 return (
-                  <button className={style.filterPartChooseName}>
-                    {i}
+                  <button
+                    onClick={() => dispatch(sortList({ sort: i.sortName }))}
+                    key={uuid()}
+                    className={style.filterPartChooseName}
+                  >
+                    {i.title}
                   </button>
                 );
               })}
             </div>
-            <p className={clsx(style.counterOffer, "_white-color")} onClick={() => setCount(count + 1)}>
-              {count}
-            </p>
           </div>
           <div className={style.offersBankPart}>
             <ItemOffersBank />

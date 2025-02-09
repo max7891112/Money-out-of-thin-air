@@ -11,67 +11,49 @@ import { InputValue } from "./UI/InputValue/InputValue";
 import { SliderRange } from "./UI/SliderRange/SliderRange";
 import { useState } from "react";
 import { CustomSvgIcon } from "./UI/checkArrow/CheckArrow";
-import { filterChangeType } from "../../../../interface/interface";
-import clsx from "clsx";
+import { CrossSvg } from "./UI/crossSvg/CrossSvg";
+import { Button } from "../../../../UI/Button/Button";
+import {v4 as uuid} from 'uuid';
 
-export const PopUp:React.FC<filterChangeType> = ({filterChange, isFilterOpen}) => {
+type ParametrType = "Кредитный лимит" | "Сумма на снятие" | "Процентная ставка";
+type ParametrsType = { title: ParametrType; symbol: "$" | "₽" | "€" | "%" };
+
+export const PopUp = () => {
   const [age, setAge] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
 
+  const parametrs: ParametrsType[] = [
+    { title: "Кредитный лимит", symbol: "₽" },
+    { title: "Сумма на снятие", symbol: "₽" },
+    { title: "Процентная ставка", symbol: "%" },
+  ];
+
   return (
-    <div className={clsx(style.container, isFilterOpen ? "" : style.shadow)}>
+    <div className={style.container}>
       <div className="_content-frame">
         <div className={style.parentBox}>
           <div className={style.box}>
             <div className={style.boxForParts}>
               <div className={style.upPart}>
                 <p className={style.title}>Все параметры</p>
-                <div className={style.crossSvg}>
-                <svg
-                  
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  onClick={()=> {filterChange()}}
-                >
-                  <path
-                    d="M19.2863 0.714233L0.714844 19.2857"
-                    stroke="white"
-                  />
-                  <path
-                    d="M0.714844 0.714233L19.2863 19.2857"
-                    stroke="white"
-                  />
-                </svg>
-                </div>
-                
+                <CrossSvg />
               </div>
               <div className={style.downPart}>
                 <div className={style.leftPart}>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Кредитный лимит</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Сумма на снятие</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
-                  <div className={style.itemBorders}>
-                    <p className={style.itemNames}>Процентная ставка</p>
-                    <div className={style.valuesBorder}>
-                      <InputValue text="от" currency="₽" />
-                      <InputValue text="до" currency="₽" />
-                    </div>
-                  </div>
+                  {parametrs.map((item) => {
+                    return (
+                      <div key={uuid()} className={style.itemBorders}>
+                        <p className={style.itemNames}>{item.title}</p>
+                        <div className={style.valuesBorder}>
+                          <InputValue text="от" currency={item.symbol} />
+                          <InputValue text="до" currency={item.symbol} />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
                 <div className={style.rightPart}>
                   <SliderRange name="Льготный период" />
@@ -118,6 +100,10 @@ export const PopUp:React.FC<filterChangeType> = ({filterChange, isFilterOpen}) =
                     </Box>
                   </div>
                 </div>
+              </div>
+              <div className={style.footer}>
+                <Button text="Очистить фильтры" padding="10px 30px" variant="transparent"/>
+                <Button text="Подобрать" padding="10px 30px" variant="green" />
               </div>
             </div>
           </div>

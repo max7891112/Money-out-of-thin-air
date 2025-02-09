@@ -12,7 +12,7 @@ export const Arrow = (props: ArrowPropsType) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M1 25L25 1M25 1V22.913M25 1H3.08696"/>
+        <path d="M1 25L25 1M25 1V22.913M25 1H3.08696" stroke="white" />
       </svg>
     </div>
   );

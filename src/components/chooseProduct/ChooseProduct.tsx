@@ -1,6 +1,21 @@
 import { CardItemProduct } from "../../UI/cardItemProduct/CardItemProduct";
 import style from "./chooseProduct.module.scss";
 import clsx from "clsx";
+import { v4 as uuid } from "uuid";
+
+type productType = {
+  name: string;
+  count: string;
+};
+
+const products: productType[] = [
+  { name: "Кредитные карты", count: "" },
+  { name: "Кредитные карты", count: "123 предложения" },
+  { name: "Дебетовые карты", count: "123 предложения" },
+  { name: "Программы лояльности", count: "123 предложения" },
+  { name: "Вклады", count: "123 предложения" },
+  { name: "Инветсици", count: "123 предложения" },
+];
 
 export const ChooseProduct = () => {
   return (
@@ -15,30 +30,15 @@ export const ChooseProduct = () => {
             банковский продукт
           </p>
           <div className={style.containerLink}>
-            <CardItemProduct
-              nameProduct="Кредитные карты"
-              countOffer="123 предложения"
-            />
-            <CardItemProduct
-              nameProduct="Дебетовые карты"
-              countOffer="123 предложения"
-            />
-            <CardItemProduct
-              nameProduct="Программы лояльности"
-              countOffer="123 предложения"
-            />
-            <CardItemProduct
-              nameProduct="Вклады"
-              countOffer="123 предложения"
-            />
-            <CardItemProduct
-              nameProduct="Инвестиции"
-              countOffer="123 предложения"
-            />
-            <CardItemProduct
-              nameProduct="Инвестиции"
-              countOffer="123 предложения"
-            />
+            {products.map((item) => {
+              return (
+                <CardItemProduct
+                  nameProduct={item.name}
+                  countOffer={item.count}
+                  key={uuid()}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,14 +1,11 @@
 import { Button } from "../../../../UI/Button/Button";
-import { FilterSvg } from "./img/FilterSvg";
+import { SortImg } from "../showCaseComponent/img/SortImg";
 import style from "./sloganChoosePage.module.scss";
 import clsx from "clsx";
-import { filterChangeType } from "../../../../interface/interface";
 
-export const SloganChoosePage:React.FC<filterChangeType> = ({filterChange}) => {
-  
+export const SloganChoosePage = () => {
   return (
     <div className={clsx(style.sloganChoosePage, "_black-background")}>
-      
       <div className="_content-frame">
         <div className={style.container}>
           <p className={clsx(style.text, "_white-color")}>
@@ -35,13 +32,8 @@ export const SloganChoosePage:React.FC<filterChangeType> = ({filterChange}) => {
                 Рефералки
               </option>
             </select>
-            <button className={clsx(style.btn, "_white-color")} onClick={()=> filterChange()}>
-              <div className={style.tbnContainer}>
-                <FilterSvg color={"#fff"} />
-                <p className={style.textBtn}>Фильтры</p>
-              </div>
-            </button>
-            <Button padding="10px 30px" text="Подробнее" />
+            <Button padding="10px 30px" variant="transparent" text="Фильтры" svg={<SortImg/>}/>
+            <Button padding="10px 30px" text="Подробнее" variant="green"/>
           </div>
         </div>
       </div>

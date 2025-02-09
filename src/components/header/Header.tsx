@@ -21,7 +21,7 @@ export const Header = () => {
             <div className={style.buttons}>
               <div className={style.buttonNightMode}>night mode</div>
 
-              <Button text="Вход" padding="10px 30px" />
+              <Button text="Вход" padding="10px 30px" variant="green"/>
             </div>
           </div>
         </div>
