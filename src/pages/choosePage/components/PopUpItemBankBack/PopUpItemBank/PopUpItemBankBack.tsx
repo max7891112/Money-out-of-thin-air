@@ -37,7 +37,7 @@ export const PopUpItemBankBack = () => {
           <table>
             <tbody>
               <tr>
-                <th>Показатель карты</th>
+                <th>Показатель lalala карты</th>
                 <th>Значение</th>
               </tr>
               {listSettingsBank[0]?.description?.map((item) => {
