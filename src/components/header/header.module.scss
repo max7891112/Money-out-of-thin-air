@@ -1,0 +1,55 @@
+.header {
+    padding: 36px;
+    background-color: #212121;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container {
+    display: flex;
+    gap: 70px;
+    padding: 0 40px;
+    align-items: center;
+}
+.title {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+.base {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    
+}
+.item{
+    transition: all .3s ease;
+    color: white;
+    &:hover{
+        color: #11B14C;
+        cursor: pointer;
+    }
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.buttonNightMode {
+    &:hover{
+        cursor: pointer;
+    }
+}
+.buttonEnter {
+    width: 100px;
+    height: 40px;
+    padding: 10px 30px;
+    color: white;
+    background-color: #11B14C;
+    border-radius: 10px;
+    font-size: 16px;
+}

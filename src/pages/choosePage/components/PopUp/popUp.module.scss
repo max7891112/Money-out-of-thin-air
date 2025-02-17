@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.parentBox {
+  display: flex;
+  justify-content: center;
+}
+.box {
+  flex-basis: 857px;
+  border-radius: 20px;
+  background-color: #212121;
+  color: #fff;
+}
+.boxForParts {
+  padding: 40px 50px 30px 50px;
+}
+.upPart {
+  display: flex;
+  justify-content: space-between;
+
+  & svg {
+    cursor: pointer;
+  }
+}
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 35px;
+  padding-top: 10px;
+}
+.crossSvg {
+}
+.downPart {
+  display: flex;
+}
+.leftPart {
+}
+.itemNames {
+  font-size: 16px;
+  line-height: 22px;
+  padding: 20px 0 10px 0;
+}
+.valuesBorder {
+  display: flex;
+  gap: 10px;
+}
+.inputWrapper {
+  position: relative;
+  width: fit-content;
+}
+.inputText {
+  position: absolute;
+  margin-left: auto;
+  top: 50%;
+  left: 10px;
+  translate: (0% -50%);
+
+  font-size: 16px;
+  color: #808080;
+}
+.inputSign {
+  position: absolute;
+  margin-right: auto;
+  right: 10px;
+  top: 50%;
+  translate: (0 -50%);
+}
+.firstBorder {
+  background-color: #040404;
+  flex-basis: 207px;
+  height: 41px;
+  border-radius: 8px;
+  color: #fff;
+  padding-left: 10px;
+}
+.lastBorder {
+}
+.itemBorders {
+}
+.itemNames {
+}
+.valuesBorder {
+}
+.firstBorder {
+}
+.lastBorder {
+}
+.rightPart {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.rangeBlock {
+}
+.range {
+  width: 258px;
+  height: 1px;
+  background-color: #fff;
+  appearance: none;
+}
+.typeBonusBlock {
+  padding-top: 21px;
+}
+.nameBonus {
+  padding-bottom: 10px;
+}
+.valueBonus {
+}
+
+.textField {
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 20px;
+  padding-top: 100px;
+}
+// .slider.slider {
+//   color: #fff;
+// }
