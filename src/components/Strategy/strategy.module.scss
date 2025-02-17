@@ -2,7 +2,7 @@
     background-color: black;
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding: 0 10px 20px 10px;
 }
 
 .wrapper{
@@ -40,16 +40,13 @@
     }
 }
 
-.cards{
-    
-}
 
 .card{
     border-radius: 20px;
     background-color: #212121;
     width: 100%;
     padding: 20px 15px 15px 20px;
-    width: 780px;
+    max-width: 780px;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -111,4 +108,68 @@
 
 ._active{
     color: white;
+}
+
+@media (max-width:1300px) {
+    .wrapper{
+        flex-direction: column;
+    }
+    .title{
+        text-align: center;
+        padding: 0;
+    }
+
+    .container{
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .type{
+        justify-content: center;
+    }
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 100%;
+        padding: 20px 15px 15px 20px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .button{
+        max-width: 780px;
+    }
+
+}
+
+@media (max-width:700px) {
+    .title{
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .cardTitle{
+        padding-bottom: 0;
+    }
+
+    .cardDescription{
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    
+}
+
+@media (max-width:500px) {
+    .type{
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
 }

@@ -1,0 +1,168 @@
+.menuBurger {
+    z-index: 1000;
+    
+    &MainContainer{
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 350px;
+        height: 100%;
+        background: black;
+        transition: all .3s ease 0s;
+    }
+
+    &Logo {
+        width: 150px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    &Navigation {
+    }
+
+    &Container {
+        text-align: center;
+        
+    }
+
+    &Item {
+        margin: 25px 0;
+        position: relative;
+        &:hover{
+            transform: translate(1px, 1px); 
+        }
+        span{
+            font-size: 32px;
+            color: white;
+            line-height: 29px;
+            font-family: Involve, sans-serif;
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+                color: #11B14C;
+                border-bottom: 3px solid #11B14C;
+            }
+        }
+       
+    }
+
+    &Copyright {
+        display: flex;
+        align-items: center;
+    }
+
+    &Line {
+        width: 100px;
+        height: 1px;
+        background-color: black;
+        margin: 0 20px 45px 20px;
+    }
+
+	&VisibleElem {
+        position: fixed;
+        z-index: 10;
+        background: transparent;
+        width: 100px;
+        height: 100%;
+        cursor: pointer;
+        transition: all .3s ease 0s;
+        background-color: rgba(255, 255, 255, 0.02);
+        &:hover{
+            background: rgba(255, 255, 255, 0.2);
+            .menuBurgerIcon::before{
+                transform-origin: top right;
+                transform: rotate(-90deg);
+                left: -10px;
+            }
+            .menuBurgerIcon::after{
+                transform-origin: top left;
+                transform: rotate(90deg);
+                top: -4px;
+                left: 10px;
+            }
+            .menuBurgerIcon span{
+                transform-origin: top right;
+                transform: rotate(90deg);
+                top: 26px;
+                left: -8px;
+            }
+        }
+	}
+
+	&Icon {
+        z-index: 30;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 34%;
+        width: 40px;
+        height: 18px;
+        cursor: pointer;
+        & span{
+            position: absolute;
+            left: 0;
+            width: 30px !important;
+            height: 22%;
+            width: 100%;
+            transition: all .3s ease 0s;
+            background-color: white;
+        }
+        &::before, &::after{
+            position: absolute;
+            left: 0;
+            height: 22%;
+            width: 100%;
+            transition: all .3s ease 0s;
+            background-color: white;
+        }
+
+        &::after, &::before{
+            content: "";
+        }
+
+        &::after{
+            bottom: -5px;
+        }
+
+        &::before{
+            top: -5px;
+        }
+
+        & span{
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+	}
+
+    @media (min-width:240px) and (max-width:844px) {
+        display: none;
+    }
+}
+
+.visible{
+    transform: translateX(0)
+}
+
+.title {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    font-family: Involve, sans-serif;
+    justify-self: flex-start;
+}
+
+.buttons{
+    font-family: Involve, sans-serif;
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 845px) {
+    .menuBurger {
+        display: none;
+    }
+}

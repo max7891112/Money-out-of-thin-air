@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 50px 0 10px 0;
+    padding: 50px 10px 10px 10px;
 }
 
 .containerForTitle {
@@ -22,7 +22,6 @@
 .container{
     display: flex;
     flex-direction: row;
-    
 }
 
 .figures{
@@ -52,10 +51,64 @@
 .text{
     
     line-height: 21px;
-    padding-left: 10px;
     padding-top: 80px;
     width: 100%;
     p{
         max-width: 425px;
+    }
+}
+
+@media (max-width:1000px) {
+    .container{
+        flex-direction: column;
+    }
+
+    .title{
+        font-size: 40px;
+        line-height: 40px;
+        padding-bottom: 20px;
+    }
+    .figures{
+        padding: 0;
+        justify-content: center;
+    }
+    .text{
+        display: flex;
+        justify-content: center;
+        p{
+            max-width: 70%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width:700px) {
+    .title{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .number{
+        font-size: 50px;
+    }
+
+    .text{
+        line-height: 21px;
+        padding-top: 30px;
+        p{
+            max-width: 90%;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .title{
+        font-size: 25px;
+
+    }
+    .figures{
+        gap: 20px;
+    }
+    .number{
+        font-size: 35px;
     }
 }

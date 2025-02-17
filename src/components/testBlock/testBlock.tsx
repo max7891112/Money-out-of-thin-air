@@ -25,7 +25,9 @@ export const TestBlock = () => {
             <Button
               padding="10px 30px"
               text="Пройти тест"
-              margin="0 20px 20px 0"
+              width="156px"
+              margin="0 0 20px 0"
+              variant="green"
             />
           </div>
         </div>

@@ -12,11 +12,26 @@ import style from "./questions.module.scss";
 import clsx from "clsx";
 export const Slider = () => {
   return (
-    <Swiper
+    <div>
+      <Swiper
       spaceBetween={30}
       slidesPerView={1.5}
       loop={true}
-      className="_content-frame"
+      className={style.contentFrame}
+      breakpoints={{
+        2400: {
+          slidesPerView: 3,
+        },
+        2000: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 1.5,
+        },
+        400: {
+          slidesPerView: 1,
+        }
+      }}
     >
       <SwiperSlide>
         <div className={clsx(style.slide, '_white-color')}>
@@ -111,5 +126,7 @@ export const Slider = () => {
         </div>
       </SwiperSlide>
     </Swiper>
+    </div>
+    
   );
 };
