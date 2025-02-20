@@ -1,0 +1,68 @@
+.wrapper {
+  background-color: #212121;
+  max-width: 605px;
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 0 30px 0 40px;
+}
+.upPart {
+  display: flex;
+  padding: 30px 0 30px 0;
+}
+.leftUpPart {
+  min-width: max-content;
+  padding-top: 10px;
+}
+.rightUpPart {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.mainBlock {
+  height: 450px;
+  overflow: auto;
+  font-size: 16px;
+  padding-right: 30px;
+}
+
+.nameScheme {
+  display: block;
+  font-weight: 600;
+  padding-bottom: 20px;
+  margin-top: 30px;
+}
+.scheme {
+  display: block;
+}
+.downPart {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 30px 30px 0;
+}
+
+table,
+tr,
+td {
+  border: 1px solid #949494;
+  border-collapse: collapse;
+}
+
+th {
+  display: none;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 20px 5px;
+}
+
+td:nth-child(1) {
+  width: 100px;
+}
+
+/* the second */
+td:nth-child(2) {
+}

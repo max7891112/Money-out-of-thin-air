@@ -1,55 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit/react";
 import { v4 as uuid } from "uuid";
-
-type ParametrType = {
-  title: string;
-  value: string;
-};
-
-type TagsType =
-  | "Бесплатное обслуживание"
-  | "Льготный период больше 90 дней"
-  | "Кэшбэк рублями"
-  | "Кэшбэк хуями";
-
-type DetailsType = {
-  release?: string;
-  service?: string;
-  insurance?: string;
-  cashback?: string;
-  circleing?: string;
-  whenAccured?: string;
-  withdrawal?: string;
-  conditionCashback?: string;
-  limitCashback?: string;
-  accrualTypeCashback?: string;
-  savingAccount?: string;
-  calculatedPeriod?: string;
-  HOLD?: string;
-  SBP?: string;
-  SPBself?: string;
-  flagomer?: string;
-  mss?: string;
-};
-
-type BankItemType = {
-  id: string;
-  nameBank: string;
-  nameCard: string;
-  parametrs: ParametrType[];
-  tags?: TagsType[];
-  details?: string;
-  typeCard?: string;
-  description?: DetailsType;
-};
-
-type ListOfBanksType = BankItemType[];
-
-type ActionSortType = {
-  payload: {
-    sort: "CredLim" | "SumSnat" | "LgotPer" | "BesprPer" | "ProcSt" | "Reverse";
-  };
-};
+import {
+  BankItemType,
+  ListOfBanksType,
+  ActionSortType,
+} from "../../../interface/interface";
 
 const initialState: ListOfBanksType = [
   {
@@ -69,6 +24,32 @@ const initialState: ListOfBanksType = [
       "Кэшбэк рублями",
       "Кэшбэк хуями",
     ],
+    schemes: [
+      {
+        name: "Кладём до 200к на накопительный счёт/краткосрочный вклад",
+        scheme:
+          "Т-банк позволяет переводить в грейс и без комиссии кредитный средства в месяц на любой счет до 50к (без подписки), 100к (подписка Pro), 200к (подписка Premium). Как итог – раз в РП можно «каруселить» 100к. Если кредитный лимит более 100к, то в первый РП переводите 100к, далее еще 100к. Итого Вы «каруселите» 200к.",
+      },
+      {
+        name: "Вывод оставшегося лимита на БКС инвестиции",
+        scheme:
+          "Регистрируемся на БКС-инвестиции (10-15 минут). Далее пополняем счет с помощью СБП. Всё, весь лимит в работе (не забываем постоянно проверять МСС, вдруг Т-банк внесет их в исключение).",
+      },
+    ],
+    description: [
+      { name: "Выпуск карты", value: "0₽" },
+      { name: "Обслуживание", value: "0₽" },
+      { name: "Страховка", value: "не навязывают" },
+      {
+        name: "Кэшбэк",
+        value: "До 10% в пяти категориях на выбор на месяц. До 30% у партнеров",
+      },
+      {
+        name: "Округление",
+        value: "Кэшбэк начисляется на каждые полные 100₽ в чеке",
+      },
+      { name: "Когда выплачивают", value: "В течении 5 рабочих дней" },
+    ],
   },
   {
     id: uuid(),
@@ -82,17 +63,20 @@ const initialState: ListOfBanksType = [
       { title: "Сумма на снятие", value: "15 000 Р" },
     ],
     tags: ["Льготный период больше 90 дней", "Кэшбэк хуями"],
-    description: {
-      release: "0₽",
-      service: "0₽",
-      insurance: "не навязывают",
-      cashback:
-        "До 10% в пяти категориях на выбор на месяц. До 30% у партнеров",
-      circleing: "Кэшбэк начисляется на каждые полные 100₽ в чеке",
-      whenAccured: "В течении 5 рабочих дней",
-      conditionCashback:
-        "Бонусы по ПЛ СберСпасибо.1б=0,5₽ — при прямом обмене на рубли. 1б=1₽, если списывать в сервисах и у партнёров Сбера (до 99%).",
-    },
+    description: [
+      { name: "Выпуск карты", value: "0₽" },
+      { name: "Обслуживание", value: "0₽" },
+      { name: "Страховка", value: "не навязывают" },
+      {
+        name: "Кэшбэк",
+        value: "До 10% в пяти категориях на выбор на месяц. До 30% у партнеров",
+      },
+      {
+        name: "Округление",
+        value: "Кэшбэк начисляется на каждые полные 100₽ в чеке",
+      },
+      { name: "Когда выплачивают", value: "В течении 5 рабочих дней" },
+    ],
   },
   {
     id: uuid(),
@@ -106,6 +90,20 @@ const initialState: ListOfBanksType = [
       { title: "Сумма на снятие", value: "25 000 Р" },
     ],
     tags: ["Льготный период больше 90 дней", "Кэшбэк хуями", "Кэшбэк рублями"],
+    description: [
+      { name: "Выпуск карты", value: "0₽" },
+      { name: "Обслуживание", value: "0₽" },
+      { name: "Страховка", value: "не навязывают" },
+      {
+        name: "Кэшбэк",
+        value: "До 10% в пяти категориях на выбор на месяц. До 30% у партнеров",
+      },
+      {
+        name: "Округление",
+        value: "Кэшбэк начисляется на каждые полные 100₽ в чеке",
+      },
+      { name: "Когда выплачивают", value: "В течении 5 рабочих дней" },
+    ],
   },
   {
     id: uuid(),
@@ -119,7 +117,22 @@ const initialState: ListOfBanksType = [
       { title: "Сумма на снятие", value: "50 000 Р" },
     ],
     tags: ["Льготный период больше 90 дней", "Кэшбэк хуями"],
+    description: [
+      { name: "Выпуск карты", value: "0₽" },
+      { name: "Обслуживание", value: "0₽" },
+      { name: "Страховка", value: "не навязывают" },
+      {
+        name: "Кэшбэк",
+        value: "До 10% в пяти категориях на выбор на месяц. До 30% у партнеров",
+      },
+      {
+        name: "Округление",
+        value: "Кэшбэк начисляется на каждые полные 100₽ в чеке",
+      },
+      { name: "Когда выплачивают", value: "В течении 5 рабочих дней" },
+    ],
   },
+  
 ];
 
 const exampleSlice = createSlice({
